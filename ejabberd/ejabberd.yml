@@ -36,7 +36,7 @@
 ## 4: Info
 ## 5: Debug
 ##
-loglevel: {{ ejabberd.loglevel }}
+{# loglevel: {{ pillar['ejabberd.loglevel'] }} #}
 
 ##
 ## watchdog_admins: Only useful for developers: if an ejabberd process
@@ -45,9 +45,9 @@ loglevel: {{ ejabberd.loglevel }}
 ##
 ## watchdog_admins:
 ##   - "bob@example.com"
-{% if ejabberd.watchdog_admins %}
+{% if pillar['ejabberd']['watchdog_admins'] %}
 watchdog_admins:
-{% for admin in ejabberd.watchdog_admins %}
+{% for admin in pillar['ejabberd']['watchdog_admins'] %}
   - {{ admin }}
 {% endfor %}
 {% endif %}
@@ -64,9 +64,9 @@ watchdog_admins:
 ##   - "example.com"
 ##   - "example.org"
 ##
-{% if ejabberd.hosts %}
+{% if pillar['ejabberd']['hosts'] %}
 hosts:
-{% for host in ejabberd.hosts %}
+{% for host in pillar['ejabberd']['hosts'] %}
   - {{ host }}
 {% endfor %}
 {% endif %}
@@ -77,8 +77,8 @@ hosts:
 ## to allow communication with an XMPP server called im.example.org.
 ##
 ## route_subdomains: s2s
-{% if ejabberd.route_subdomains %}
-route_subdomains: {{ ejabberd.route_subdomains }}
+{% if pillar['ejabberd']['route_subdomains'] %}
+route_subdomains: {{ pillar['ejabberd']['route_subdomains'] }}
 {% endif %}
 
 ###   ===============
