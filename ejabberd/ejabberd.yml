@@ -1,3 +1,5 @@
+{{ejabberd}}
+{#
 ###
 ###               ejabberd configuration file
 ###
@@ -623,3 +625,4 @@ modules:
 ### mode: yaml
 ### End:
 ### vim: set filetype=yaml tabstop=8
+#}
