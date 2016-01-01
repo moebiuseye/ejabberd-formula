@@ -36,7 +36,7 @@
 ## 4: Info
 ## 5: Debug
 ##
-{# loglevel: {{ pillar['ejabberd.loglevel'] }} #}
+loglevel: {{ pillar['ejabberd.loglevel'] }}
 
 ##
 ## watchdog_admins: Only useful for developers: if an ejabberd process
